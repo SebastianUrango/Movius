@@ -1,3 +1,13 @@
+| **ID** | RF-001 |
+|--------|---------|
+| **Nombre** | Consulta de rutas y horarios |
+| **Descripción** | El sistema permitirá a los usuarios (auxiliares de despacho, estudiantes y docentes) consultar las rutas disponibles con sus respectivos horarios, puntos de origen y destino, y el estado actual del bus (en servicio, retrasado o cancelado). <br><br>**Entrada:** Selección de ruta o fecha de consulta por parte del usuario. <br>**Procesamiento:** El sistema busca la información en la base de datos de programación y estado de flota. <br>**Salida:** Muestra la lista de rutas y horarios actualizados en pantalla, con información legible y sincronizada en tiempo real. |
+| **Prioridad** | Esencial |
+| **Estabilidad** | Alta |
+| **Fuente** | Dirección de Servicios Estudiantiles / Auxiliar de despacho |
+| **Criterios de Aceptación** | 1. El usuario puede visualizar todas las rutas activas del día seleccionado. <br>2. El sistema actualiza los horarios y estados de los buses en menos de 60 segundos. <br>3. La información se presenta en un formato claro, ordenado y comprensible. |
+| **Dependencias** | RF-002 (Ubicación de buses en tiempo real), RF-005 (Gestión de programación de rutas) |
+| **Comentarios** | Este requisito es esencial para la operación diaria, ya que permite consultar la programación de buses y verificar su disponibilidad de manera eficiente. |
 
 
 | Campo | Descripción |
@@ -25,9 +35,9 @@
 | **Actores** |Auxiliar de despacho |
 | **Descripción** | Permite al auxiliar de despacho acceder al sistema MOVIUS ingresando sus credenciales (usuario y contraseña). El sistema valida la información proporcionada y permite el acceso solo si las credenciales son correctas. En caso contrario, se notifica al usuario.. |
 | **Precondiciones** | 1. El sistema MOVIUS debe estar disponible.<br>El auxiliar de despacho debe tener una cuenta activa y credenciales válidas registradas. |
-| **Postcondiciones** | 1. Si las credenciales son correctas, el auxiliar de despacho accede al sistema.<br>Si las credenciales son incorrectas, el sistema muestra un mensaje de error y no permite el acceso. |
-| **Flujo Principal** | 1. El auxiliar de despacho abre el sistema MOVIUS.<br>2. El auxiliar selecciona la opción “Iniciar sesión”.<br>3. El sistema solicita las credenciales (usuario y contraseña).<br>4. El auxiliar ingresa las credenciales requeridas.<br>4. El sistema valida las credenciales (CU-02 Validar credenciales).<br>6. Si las credenciales son válidas, el sistema concede acceso al usuario.<br>7. El sistema muestra el menú principal del módulo correspondiente. |
-| **Flujos Alternativos** | **4a.credenciales no validas**:<br>  4a1. El sistema detecta que las credenciales no son correctas.<br>4a2. El sistema ejecuta el caso de uso CU-03 Notificar credenciales incorrectas.<br>4a3. El auxiliar puede volver a intentar iniciar sesión o cancelar el proceso. |
-| **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con el préstamo<br>  5a3. El sistema ofrece opción "Registrar pago de multa"<br>  5a4. Fin del caso de uso<br><br>**11a. Error al registrar préstamo (error de BD)**:<br>  11a1. El sistema muestra mensaje "Error al procesar préstamo. Intente nuevamente"<br>  11a2. El sistema registra el error en log con detalles técnicos<br>  11a3. NO se registra el préstamo<br>  11a4. NO se cambia el estado de los materiales<br>  11a5. El bibliotecario puede reintentar desde el paso 9 o cancelar<br>  11a6. Fin del caso de uso |
-| **Requisitos Relacionados** | RF-030 (Registro de préstamo)<br>RF-031 (Validación de disponibilidad)<br>RF-032 (Validación de estado de usuario)<br>RF-033 (Generación de comprobante)<br>RNF-004 (Integridad transaccional)<br>RNFR-001 (Tiempo de respuesta) |
+| **Postcondiciones** | 1.El usuario accede correctamente al sistema y se habilitan las opciones del menú principal según su rol. En caso de credenciales incorrectas, se genera una notificación de error. |
+| **Flujo Principal** | 1. El auxiliar de despacho abre el sistema MOVIUS.<br>2. El sistema muestra la pantalla de inicio de sesión.<br>3. El auxiliar ingresa su nombre de usuario y contraseña.<br>4. El sistema incluye el caso de uso UC-02 Validar credenciales.<br>5. Si las credenciales son correctas, el sistema concede acceso al panel principal.<br>6. El sistema registra el inicio de sesión exitoso. |
+| **Flujos Alternativos** | 4a. Credenciales inválidas:<br>4a1. El sistema extiende el caso de uso UC-03 Notificar credenciales incorrectas.<br>4a2. Se muestra el mensaje “Usuario o contraseña incorrectos”.<br>4a3. El auxiliar puede reintentar el inicio de sesión. |
+| **Flujos de Excepción** | 1a. Falla de conexión con el servidor:<br>1a1. El sistema muestra el mensaje “Error de conexión. Intente nuevamente más tarde”.<br>1a2. Se registra el error en el log del sistema.<br>1a3. Fin del caso de uso. |
+| **Requisitos Relacionados** | 	RF-001 (Gestión de autenticación de usuarios)<br>RF-002 (Validación de credenciales)<br>RF-003 (Notificación de errores de acceso)<br>RNF-001 (Seguridad de acceso)<br>RNFR-002 (Tiempo máximo de respuesta del sistema) |
 <br>
