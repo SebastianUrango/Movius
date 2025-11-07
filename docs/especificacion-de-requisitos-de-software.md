@@ -4,7 +4,7 @@ MoviUs es una plataforma digital que busca modernizar la gestión del transporte
 
 El sistema se integrará con el inicio de sesión institucional para mayor seguridad y ofrecerá una interfaz simple, adaptable y accesible para todos. En pocas palabras, MoviUs hará que el transporte universitario sea más ágil, ordenado y confiable.
 
-# Funciones del producto
+# 2.2Funciones del producto
 
 * El sistema MoviUs cubrirá las siguientes funciones principales:
 
@@ -23,6 +23,27 @@ El sistema se integrará con el inicio de sesión institucional para mayor segur
 * Atención a emergencias: Se incluirá un botón de pánico con notificación inmediata al área de seguridad.
 
 * Estas funciones buscan resolver los principales problemas actuales: falta de comunicación, planificación ineficiente y ausencia de información en tiempo real.
+# 2.3Caracteristicas del usuario
+
+| Característica | Usuario Tipo 1: Estudiante | Usuario Tipo 2: Docente | Usuario Tipo 3: Auxiliar de Préstamo |
+|----------------|----------------------------|---------------------------|---------------------------------------|
+| **Descripción** | Miembro de la comunidad que usa el sistema para acceder a servicios de transporte y consultar rutas. | Miembro académico que usa el sistema para consultar rutas y gestionar reservas. | Personal encargado de gestionar registros, asistencia, novedades y soporte básico. |
+| **Responsabilidades** | Consultar rutas, reservar cupo, recibir notificaciones. | Lo mismo que el estudiante + gestión de reservas especiales. | Administrar registros, asistir en el control de rutas y gestionar novedades. |
+| **Nivel Técnico** | Medio | Medio | Bajo/Medio |
+| **Experiencia en el Dominio** | Novato | Intermedio | Intermedio |
+| **Frecuencia de Uso** | Diaria | Semanal/Diaria | Diaria |
+| **Funciones Principales** | - Ver rutas y horarios <br> - Reservar cupo <br> - Recibir notificaciones | - Ver rutas <br> - Reservar cupos especiales <br> - Revisar disponibilidad | - Registrar pasajeros <br> - Control de asistencia <br> - Gestión de novedades operativas |
+| **Necesidades Especiales** | Acceso rápido y simple | Información clara y rápida | Interfaz sencilla, botones grandes y accesibles |
+
+| Característica | Usuario Tipo 1: Administrador del Sistema | Usuario Tipo 2: Directora de Transporte | Usuario Tipo 3: Directora Administrativa |
+|----------------|--------------------------------------------|-------------------------------------------|--------------------------------------------|
+| **Descripción** | Usuario responsable de la configuración del sistema y administración general. | Directiva encargada de supervisar indicadores operativos del transporte. | Directiva encargada de la toma de decisiones estratégicas basadas en reportes. |
+| **Responsabilidades** | Gestionar usuarios, permisos, parámetros y reportes técnicos. | Revisar dashboards, analizar ocupación, puntualidad y alertas. | Revisar dashboards ejecutivos y alertas estratégicas. |
+| **Nivel Técnico** | Alto | Medio | Medio |
+| **Experiencia en el Dominio** | Experto | Intermedio | Intermedio |
+| **Frecuencia de Uso** | Semanal/Diaria | Semanal | Semanal/Mensual |
+| **Funciones Principales** | - Crear/editar rutas <br> - Gestionar usuarios <br> - Generar reportes | - Ver panel administrativo <br> - Revisar alertas <br> - Analizar métricas operativas | - Revisar métricas ejecutivas <br> - Analizar tendencias <br> - Supervisar cumplimiento del servicio |
+| **Necesidades Especiales** | Accesos avanzados del sistema | Información resumida y clara | Dashboards ejecutivos y exportables |
 
 #  Restricciones
 Técnicas
