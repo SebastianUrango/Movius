@@ -98,6 +98,17 @@ Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una e
 | **Dependencias** | RF-002 (Ubicación de buses en tiempo real), RF-005 (Gestión de programación de rutas) |
 | **Comentarios** | Este requisito es esencial para la operación diaria, ya que permite consultar la programación de buses y verificar su disponibilidad de manera eficiente. |
 
+| **ID** | RF-002 |
+|--------|---------|
+| **Nombre** | Ubicación de buses en tiempo real |
+| **Descripción** | El sistema mostrará la ubicación de los buses en un mapa, utilizando los datos GPS enviados desde los vehículos. <br><br>**Entrada:** Datos GPS del bus. <br>**Procesamiento:** Actualización del mapa con la posición del bus. <br>**Salida:** Mapa con posición del bus actualizada. |
+| **Prioridad** | Esencial |
+| **Estabilidad** | Media |
+| **Fuente** | Área de Transporte UMN |
+| **Criterios de Aceptación** | 1. El mapa se actualiza cada 10–15 segundos. <br>2. Se muestra si el bus está en movimiento o detenido. <br>3. La ruta del bus es visible para el usuario. |
+| **Dependencias** | GPS de buses, red móvil |
+| **Comentarios** | Mejora la precisión de la información para los usuarios. |
+
 
 | Campo | Descripción |
 |-------|-------------|
