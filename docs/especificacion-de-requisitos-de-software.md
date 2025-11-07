@@ -109,6 +109,72 @@ Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una e
 | **Dependencias** | GPS de buses, red móvil |
 | **Comentarios** | Mejora la precisión de la información para los usuarios. |
 
+| **ID** | RF-003 |
+|--------|---------|
+| **Nombre** | Reserva de cupo |
+| **Descripción** | El sistema permitirá a los estudiantes reservar un cupo en rutas de alta demanda antes de la hora de salida. <br><br>**Entrada:** Selección de ruta y confirmación de reserva. <br>**Procesamiento:** Validación de disponibilidad y registro de la reserva. <br>**Salida:** Confirmación visual de la reserva realizada. |
+| **Prioridad** | Alta |
+| **Estabilidad** | Media |
+| **Fuente** | Servicios Estudiantiles |
+| **Criterios de Aceptación** | 1. No se permite reservar más cupos de los disponibles. <br>2. Las reservas se asocian a cuentas institucionales válidas. <br>3. El usuario puede cancelar la reserva antes del inicio de la ruta. |
+| **Dependencias** | RF-001 (Consulta de rutas), RF-007 (Panel administrativo) |
+| **Comentarios** | Ayuda a evitar sobrecupos y mejorar la organización de rutas. |
+
+| **ID** | RF-004 |
+|--------|---------|
+| **Nombre** | Notificaciones automáticas |
+| **Descripción** | El sistema enviará notificaciones sobre retrasos, cancelaciones o emergencias asociadas a las rutas. <br><br>**Entrada:** Evento generado (retraso, cancelación, emergencia). <br>**Procesamiento:** Envío de alerta según la ruta del usuario. <br>**Salida:** Notificación push en el dispositivo. |
+| **Prioridad** | Alta |
+| **Estabilidad** | Media |
+| **Fuente** | Coordinación de Transporte |
+| **Criterios de Aceptación** | 1. Las alertas se envían en menos de 30 segundos. <br>2. El usuario recibe notificaciones incluso con la app cerrada. <br>3. Las notificaciones dependen de las rutas seguidas o reservadas. |
+| **Dependencias** | Sistema de notificaciones, RF-003 |
+| **Comentarios** | Mejora la comunicación y reduce confusiones. |
+
+| **ID** | RF-005 |
+|--------|---------|
+| **Nombre** | Gestión de programación de rutas |
+| **Descripción** | El personal administrativo podrá crear, editar y desactivar rutas y horarios según la operación diaria. <br><br>**Entrada:** Datos de nueva ruta u horario. <br>**Procesamiento:** Registro o modificación en la base de datos. <br>**Salida:** Programación actualizada visible para los usuarios. |
+| **Prioridad** | Alta |
+| **Estabilidad** | Alta |
+| **Fuente** | Área Administrativa UMN |
+| **Criterios de Aceptación** | 1. El sistema registra cada cambio con fecha y responsable. <br>2. Las actualizaciones reflejan en menos de 1 minuto. <br>3. Solo personal autorizado puede acceder. |
+| **Dependencias** | Inicio de sesión institucional |
+| **Comentarios** | Es clave para mantener información actualizada en todo momento. |
+
+| **ID** | RF-006 |
+|--------|---------|
+| **Nombre** | Registro y trazabilidad de pasajeros |
+| **Descripción** | Los usuarios se registrarán al abordar mediante escaneo de un código QR institucional. <br><br>**Entrada:** Código QR del usuario. <br>**Procesamiento:** Validación e ingreso a la base de datos. <br>**Salida:** Confirmación de registro exitoso. |
+| **Prioridad** | Media |
+| **Estabilidad** | Media |
+| **Fuente** | Seguridad UMN |
+| **Criterios de Aceptación** | 1. El escaneo se realiza en menos de 2 segundos. <br>2. Solo se permiten cuentas institucionales válidas. <br>3. Se registra fecha, ruta y bus correspondiente. |
+| **Dependencias** | RF-001, conexión móvil |
+| **Comentarios** | Importante para seguridad y control de aforo. |
+
+| **ID** | RF-007 |
+|--------|---------|
+| **Nombre** | Panel administrativo |
+| **Descripción** | El sistema mostrará métricas operativas como ocupación, puntualidad y eficiencia, accesibles solo para administradores. <br><br>**Entrada:** Datos estadísticos de uso. <br>**Procesamiento:** Cálculo y presentación de indicadores. <br>**Salida:** Dashboard con métricas. |
+| **Prioridad** | Media |
+| **Estabilidad** | Media |
+| **Fuente** | Coordinación de Transporte |
+| **Criterios de Aceptación** | 1. Se muestran métricas diarias, semanales y mensuales. <br>2. Los reportes pueden exportarse en Excel o CSV. <br>3. Solo personal autorizado puede ingresar. |
+| **Dependencias** | Base de datos, RF-006 |
+| **Comentarios** | Facilita la toma de decisiones y la planeación. |
+
+| **ID** | RF-008 |
+|--------|---------|
+| **Nombre** | Botón de emergencia |
+| **Descripción** | El sistema incluirá un botón de pánico que enviará una alerta con la ubicación del usuario al área de seguridad. <br><br>**Entrada:** Presión del botón. <br>**Procesamiento:** Envío de alerta inmediata. <br>**Salida:** Confirmación visual de “alerta enviada”. |
+| **Prioridad** | Esencial |
+| **Estabilidad** | Alta |
+| **Fuente** | Departamento de Seguridad UMN |
+| **Criterios de Aceptación** | 1. La alerta se envía en menos de 5 segundos. <br>2. Incluye ubicación aproximada. <br>3. Seguridad recibe la notificación de inmediato. |
+| **Dependencias** | GPS, RF-002 |
+| **Comentarios** | Requisito crítico para la seguridad de los usuarios. |
+
 
 | Campo | Descripción |
 |-------|-------------|
