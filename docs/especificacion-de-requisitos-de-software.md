@@ -235,3 +235,7 @@ Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una e
 | Flujos de Excepción  |  6a. Falla en el Servicio de Notificaciones: Si el servicio externo (ej. Firebase Cloud Messaging) no responde, el sistema registra el error, realiza un reintento y notifica al Administrador que la notificación podría no haber llegado a todos los usuarios. |
 | Reglas de Negocio  | RN-NOT-001: La notificación de retraso solo se debe permitir si el tiempo de espera excede los 15 minutos (configurable).<br>RN-NOT-002: El envío de notificaciones de cancelación detiene inmediatamente la recepción de coordenadas GPS del bus (si estaba activo).  |
 | Requisitos Relacionados  |  RF-015 (Notificaciones de Retraso/Cancelación), RNF-DISP-002 (Tasa de entrega de notificaciones > 99%), RNF-006 (Auditoría de seguridad). |
+
+
+
+<img width="930" height="524" alt="image" src="https://github.com/user-attachments/assets/f6488eef-e5f5-4976-8fde-80583d26d9a5" />
