@@ -4,7 +4,7 @@ MoviUs es una plataforma digital que busca modernizar la gestión del transporte
 
 El sistema se integrará con el inicio de sesión institucional para mayor seguridad y ofrecerá una interfaz simple, adaptable y accesible para todos. En pocas palabras, MoviUs hará que el transporte universitario sea más ágil, ordenado y confiable.
 
-# 2.2Funciones del producto
+# Funciones del producto
 
 * El sistema MoviUs cubrirá las siguientes funciones principales:
 
@@ -23,27 +23,6 @@ El sistema se integrará con el inicio de sesión institucional para mayor segur
 * Atención a emergencias: Se incluirá un botón de pánico con notificación inmediata al área de seguridad.
 
 * Estas funciones buscan resolver los principales problemas actuales: falta de comunicación, planificación ineficiente y ausencia de información en tiempo real.
-# 2.3Caracteristicas del usuario
-
-| Característica | Usuario Tipo 1: Estudiante | Usuario Tipo 2: Docente | Usuario Tipo 3: Auxiliar de Préstamo |
-|----------------|----------------------------|---------------------------|---------------------------------------|
-| **Descripción** | Miembro de la comunidad que usa el sistema para acceder a servicios de transporte y consultar rutas. | Miembro académico que usa el sistema para consultar rutas y gestionar reservas. | Personal encargado de gestionar registros, asistencia, novedades y soporte básico. |
-| **Responsabilidades** | Consultar rutas, reservar cupo, recibir notificaciones. | Lo mismo que el estudiante + gestión de reservas especiales. | Administrar registros, asistir en el control de rutas y gestionar novedades. |
-| **Nivel Técnico** | Medio | Medio | Bajo/Medio |
-| **Experiencia en el Dominio** | Novato | Intermedio | Intermedio |
-| **Frecuencia de Uso** | Diaria | Semanal/Diaria | Diaria |
-| **Funciones Principales** | - Ver rutas y horarios <br> - Reservar cupo <br> - Recibir notificaciones | - Ver rutas <br> - Reservar cupos especiales <br> - Revisar disponibilidad | - Registrar pasajeros <br> - Control de asistencia <br> - Gestión de novedades operativas |
-| **Necesidades Especiales** | Acceso rápido y simple | Información clara y rápida | Interfaz sencilla, botones grandes y accesibles |
-
-| Característica | Usuario Tipo 1: Administrador del Sistema | Usuario Tipo 2: Directora de Transporte | Usuario Tipo 3: Directora Administrativa |
-|----------------|--------------------------------------------|-------------------------------------------|--------------------------------------------|
-| **Descripción** | Usuario responsable de la configuración del sistema y administración general. | Directiva encargada de supervisar indicadores operativos del transporte. | Directiva encargada de la toma de decisiones estratégicas basadas en reportes. |
-| **Responsabilidades** | Gestionar usuarios, permisos, parámetros y reportes técnicos. | Revisar dashboards, analizar ocupación, puntualidad y alertas. | Revisar dashboards ejecutivos y alertas estratégicas. |
-| **Nivel Técnico** | Alto | Medio | Medio |
-| **Experiencia en el Dominio** | Experto | Intermedio | Intermedio |
-| **Frecuencia de Uso** | Semanal/Diaria | Semanal | Semanal/Mensual |
-| **Funciones Principales** | - Crear/editar rutas <br> - Gestionar usuarios <br> - Generar reportes | - Ver panel administrativo <br> - Revisar alertas <br> - Analizar métricas operativas | - Revisar métricas ejecutivas <br> - Analizar tendencias <br> - Supervisar cumplimiento del servicio |
-| **Necesidades Especiales** | Accesos avanzados del sistema | Información resumida y clara | Dashboards ejecutivos y exportables |
 
 #  Restricciones
 Técnicas
@@ -119,83 +98,6 @@ Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una e
 | **Dependencias** | RF-002 (Ubicación de buses en tiempo real), RF-005 (Gestión de programación de rutas) |
 | **Comentarios** | Este requisito es esencial para la operación diaria, ya que permite consultar la programación de buses y verificar su disponibilidad de manera eficiente. |
 
-| **ID** | RF-002 |
-|--------|---------|
-| **Nombre** | Ubicación de buses en tiempo real |
-| **Descripción** | El sistema mostrará la ubicación de los buses en un mapa, utilizando los datos GPS enviados desde los vehículos. <br><br>**Entrada:** Datos GPS del bus. <br>**Procesamiento:** Actualización del mapa con la posición del bus. <br>**Salida:** Mapa con posición del bus actualizada. |
-| **Prioridad** | Esencial |
-| **Estabilidad** | Media |
-| **Fuente** | Área de Transporte UMN |
-| **Criterios de Aceptación** | 1. El mapa se actualiza cada 10–15 segundos. <br>2. Se muestra si el bus está en movimiento o detenido. <br>3. La ruta del bus es visible para el usuario. |
-| **Dependencias** | GPS de buses, red móvil |
-| **Comentarios** | Mejora la precisión de la información para los usuarios. |
-
-| **ID** | RF-003 |
-|--------|---------|
-| **Nombre** | Reserva de cupo |
-| **Descripción** | El sistema permitirá a los estudiantes reservar un cupo en rutas de alta demanda antes de la hora de salida. <br><br>**Entrada:** Selección de ruta y confirmación de reserva. <br>**Procesamiento:** Validación de disponibilidad y registro de la reserva. <br>**Salida:** Confirmación visual de la reserva realizada. |
-| **Prioridad** | Alta |
-| **Estabilidad** | Media |
-| **Fuente** | Servicios Estudiantiles |
-| **Criterios de Aceptación** | 1. No se permite reservar más cupos de los disponibles. <br>2. Las reservas se asocian a cuentas institucionales válidas. <br>3. El usuario puede cancelar la reserva antes del inicio de la ruta. |
-| **Dependencias** | RF-001 (Consulta de rutas), RF-007 (Panel administrativo) |
-| **Comentarios** | Ayuda a evitar sobrecupos y mejorar la organización de rutas. |
-
-| **ID** | RF-004 |
-|--------|---------|
-| **Nombre** | Notificaciones automáticas |
-| **Descripción** | El sistema enviará notificaciones sobre retrasos, cancelaciones o emergencias asociadas a las rutas. <br><br>**Entrada:** Evento generado (retraso, cancelación, emergencia). <br>**Procesamiento:** Envío de alerta según la ruta del usuario. <br>**Salida:** Notificación push en el dispositivo. |
-| **Prioridad** | Alta |
-| **Estabilidad** | Media |
-| **Fuente** | Coordinación de Transporte |
-| **Criterios de Aceptación** | 1. Las alertas se envían en menos de 30 segundos. <br>2. El usuario recibe notificaciones incluso con la app cerrada. <br>3. Las notificaciones dependen de las rutas seguidas o reservadas. |
-| **Dependencias** | Sistema de notificaciones, RF-003 |
-| **Comentarios** | Mejora la comunicación y reduce confusiones. |
-
-| **ID** | RF-005 |
-|--------|---------|
-| **Nombre** | Gestión de programación de rutas |
-| **Descripción** | El personal administrativo podrá crear, editar y desactivar rutas y horarios según la operación diaria. <br><br>**Entrada:** Datos de nueva ruta u horario. <br>**Procesamiento:** Registro o modificación en la base de datos. <br>**Salida:** Programación actualizada visible para los usuarios. |
-| **Prioridad** | Alta |
-| **Estabilidad** | Alta |
-| **Fuente** | Área Administrativa UMN |
-| **Criterios de Aceptación** | 1. El sistema registra cada cambio con fecha y responsable. <br>2. Las actualizaciones reflejan en menos de 1 minuto. <br>3. Solo personal autorizado puede acceder. |
-| **Dependencias** | Inicio de sesión institucional |
-| **Comentarios** | Es clave para mantener información actualizada en todo momento. |
-
-| **ID** | RF-006 |
-|--------|---------|
-| **Nombre** | Registro y trazabilidad de pasajeros |
-| **Descripción** | Los usuarios se registrarán al abordar mediante escaneo de un código QR institucional. <br><br>**Entrada:** Código QR del usuario. <br>**Procesamiento:** Validación e ingreso a la base de datos. <br>**Salida:** Confirmación de registro exitoso. |
-| **Prioridad** | Media |
-| **Estabilidad** | Media |
-| **Fuente** | Seguridad UMN |
-| **Criterios de Aceptación** | 1. El escaneo se realiza en menos de 2 segundos. <br>2. Solo se permiten cuentas institucionales válidas. <br>3. Se registra fecha, ruta y bus correspondiente. |
-| **Dependencias** | RF-001, conexión móvil |
-| **Comentarios** | Importante para seguridad y control de aforo. |
-
-| **ID** | RF-007 |
-|--------|---------|
-| **Nombre** | Panel administrativo |
-| **Descripción** | El sistema mostrará métricas operativas como ocupación, puntualidad y eficiencia, accesibles solo para administradores. <br><br>**Entrada:** Datos estadísticos de uso. <br>**Procesamiento:** Cálculo y presentación de indicadores. <br>**Salida:** Dashboard con métricas. |
-| **Prioridad** | Media |
-| **Estabilidad** | Media |
-| **Fuente** | Coordinación de Transporte |
-| **Criterios de Aceptación** | 1. Se muestran métricas diarias, semanales y mensuales. <br>2. Los reportes pueden exportarse en Excel o CSV. <br>3. Solo personal autorizado puede ingresar. |
-| **Dependencias** | Base de datos, RF-006 |
-| **Comentarios** | Facilita la toma de decisiones y la planeación. |
-
-| **ID** | RF-008 |
-|--------|---------|
-| **Nombre** | Botón de emergencia |
-| **Descripción** | El sistema incluirá un botón de pánico que enviará una alerta con la ubicación del usuario al área de seguridad. <br><br>**Entrada:** Presión del botón. <br>**Procesamiento:** Envío de alerta inmediata. <br>**Salida:** Confirmación visual de “alerta enviada”. |
-| **Prioridad** | Esencial |
-| **Estabilidad** | Alta |
-| **Fuente** | Departamento de Seguridad UMN |
-| **Criterios de Aceptación** | 1. La alerta se envía en menos de 5 segundos. <br>2. Incluye ubicación aproximada. <br>3. Seguridad recibe la notificación de inmediato. |
-| **Dependencias** | GPS, RF-002 |
-| **Comentarios** | Requisito crítico para la seguridad de los usuarios. |
-
 
 | Campo | Descripción |
 |-------|-------------|
@@ -229,4 +131,68 @@ Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una e
 | **Requisitos Relacionados** | 	RF-001 (Gestión de autenticación de usuarios)<br>RF-002 (Validación de credenciales)<br>RF-003 (Notificación de errores de acceso)<br>RNF-001 (Seguridad de acceso)<br>RNFR-002 (Tiempo máximo de respuesta del sistema) |
 <br>
 
-hola mundo 
+# 4.1 Casos De Uso 
+1. CU-011: Gestionar Rutas y Paradas
+
+   
+| Campo  |  Descripción |
+|---|---|
+|   ID	| CU-011  |
+| Nombre  | Gestionar Rutas y Paradas  |
+| Actores  | Administrador (primario)  |
+|  Descripcion | Permite al Administrador crear, modificar, activar, desactivar y eliminar rutas de transporte, definiendo sus puntos geolocalizados de parada y sus horarios asociados.  |
+|  Precondiciones  | 1. El Administrador ha iniciado sesión <br> 2. El sistema de geolocalización está operativo.|
+|  Postcondiciones (Exito) | 1. Se crea/modifica una ruta con sus paradas y horarios asociados.<br> 2. La configuración se actualiza en la base de datos y es visible para los usuarios.  |
+|  Flujo Principal | 1. El Administrador selecciona la opción "Gestión de Rutas".<br> 2. El sistema muestra la lista de rutas.<br>3. El Administrador selecciona "Crear Nueva Ruta".<br>4. El sistema solicita los datos básicos de la ruta (nombre, descripción).<br>5. El Administrador añade Puntos de Parada geolocalizados y define los horarios.<br>6. El sistema valida que las coordenadas de paradas sean únicas.<br>7. El Administrador confirma la creación/modificación.<br>8. El sistema registra la nueva ruta y la activa por defecto.<br>9. Fin del caso de uso.  |
+|  Flujos Alternativos  |  3a. Modificar Ruta Existente: El Administrador selecciona una ruta existente. El sistema carga la configuración actual (paradas/horarios). Vuelve al paso 5 para modificar.<br>3b. Desactivar/Eliminar Ruta: El Administrador selecciona una ruta y la desactiva. El sistema verifica que no tenga viajes programados. Si no los tiene, la desactiva (o la elimina si se solicita). |
+|  Flujos De Excepcion | 6a. Coordenadas Duplicadas: El sistema detecta que dos paradas tienen coordenadas idénticas. Muestra un error y obliga al Administrador a ajustar una de las coordenadas.  |
+| Reglas De Negocio  |  RN-RUT-001: Una ruta debe tener al menos dos Puntos de Parada (origen y destino).<br>RN-RUT-002: Solo se puede eliminar una ruta si su estado es "Inactiva" y no tiene historial de viajes en los últimos 3 meses. |
+|  Requisitos Relacionados |  RF-011 (Gestión de Horarios), RF-017 (Configuración de Puntos de Parada), RNF-GEO-001 (Precisión de geolocalización). |
+
+2. CU-012: Iniciar y Finalizar Viaje
+
+ | Campo  |  Descripción |
+|---|---|
+|  ID | CU-012  |
+|  Nombre | Iniciar y Finalizar Viaje  |
+|  Actores  | Conductor (primario), Sistema de gestión de flota (secundario)  |
+|  Descripcion |  Permite al Conductor registrar el inicio de un viaje asignado, activar el seguimiento GPS en tiempo real y, al finalizar, registrar los datos del trayecto (incluyendo el tiempo total y la hora de llegada). |
+|  Precondiciones | 1. El Conductor ha iniciado sesión.<br>2. El Conductor está asignado a un viaje programado y el bus está identificado.  |
+|  Postcondiciones(Exito) | 1. Se registra la hora de inicio y fin del viaje.<br>2. Durante el viaje, el estado del bus se actualiza a "En Trayecto" y se transmite la ubicación.<br>3. Se calcula y registra el tiempo total y la puntualidad del viaje.  |
+|  Flujo Principal | 1. El Conductor selecciona el viaje programado desde su interfaz.<br>2. El sistema muestra el resumen del viaje (ruta, hora de salida).<br>3. El Conductor presiona "Iniciar Viaje".<br>4. El sistema registra la hora de inicio y activa el módulo GPS.<br>5. Durante el trayecto, el sistema recibe y transmite la ubicación del bus (para CU-013).<br>6. Al llegar al destino final, el Conductor presiona "Finalizar Viaje".<br>7. El sistema registra la hora de fin y desactiva la transmisión GPS.<br>8. Fin del caso de uso.  |
+| Flujos Alternativos   | 4a. Retraso en el Inicio: Si el Conductor intenta iniciar el viaje $\text{X}$ minutos después de la hora programada, el sistema genera una alerta y requiere una justificación antes de iniciar.  |
+|  Flujos De Excepcion | 5a. Falla de Conexión GPS: Si el sistema detecta la pérdida de señal GPS durante más de 5 minutos, notifica al Conductor y registra el incidente. El viaje puede continuar, pero la ubicación deja de transmitirse.  |
+|  Reglas De Negocio | RN-VIA-001: El seguimiento GPS debe estar activo mientras el estado del viaje sea "En Trayecto".<br>RN-VIA-002: El sistema debe calcular la puntualidad del viaje comparando la hora de llegada registrada con la hora de llegada programada.  |
+|  Requisitos Relacionados | RF-013 (Seguimiento GPS), RF-018 (Reportes de Eficiencia), RNF-DISP-001 (Disponibilidad de la conexión GPS).  |
+
+3. CU-013: Consultar Ubicación del Bus
+
+| Campo  |  Descripción |
+|---|---|
+|  ID | CU-013  |
+|  Nombre | Consultar Ubicación del Bus  |
+|  Actores | Usuario (primario)  |
+|  Descripcion | Permite al Usuario ver la ubicación en tiempo real del bus asignado a su ruta y obtener la hora estimada de llegada (ETA) a su parada.  |
+|  Precondiciones |  1. El Usuario ha iniciado sesión.<br>2. El bus de la ruta seleccionada está en estado "En Trayecto" (vía CU-012). |
+|  Postcondiciones(Exito) | 1. La interfaz del Usuario muestra la ubicación actualizada del bus.<br>2. Se actualiza la ETA a la parada del Usuario.  |
+| Flujo Principal  |  1. El Usuario selecciona su ruta o el viaje activo en la aplicación.<br>2. El sistema verifica el estado del bus.<br>3. El sistema recibe las coordenadas GPS del bus y las mapea.<br>4. El sistema calcula el ETA del bus a la parada de interés del Usuario.<br>5. El sistema muestra la ubicación del bus en un mapa junto con el ETA.<br>6. El sistema actualiza la información continuamente.<br>7. Fin del caso de uso. |
+|  Flujos Alternativos |  2a. Bus No en Trayecto: Si el bus está "En Terminal" o "Inactivo", el sistema muestra un mensaje indicando el horario de la próxima salida programada.<br>4a. Alta Demanda de Datos: Si la latencia es alta (mayor a RNF-001), el sistema muestra una advertencia sobre el posible retraso en la actualización. |
+|  Flujos De Excepcion | 3a. Falla en el Servicio de Mapas: Si el servicio de mapas (ej. Google Maps) falla, el sistema muestra solo la última ubicación conocida en formato de texto.  |
+|  Reglas De Negocio | RN-CONS-001: La ubicación solo debe mostrarse a Usuarios que han iniciado sesión y están asociados a la Universidad.<br>RN-CONS-002: El ETA se debe recalcular dinámicamente cada 30 segundos usando la velocidad actual del bus.  |
+|  Requisitos Relacionados | RF-013 (Seguimiento GPS), RNF-001 (Tiempo de respuesta < 500ms), RNF-GEO-001 (Precisión de geolocalización).  |
+
+4. CU-014: Registrar Asistencia por Código QR
+
+| Campo  |Descripcion   |
+|---|---|
+|  ID |  CU-014 |
+| Nombre  | Registrar Asistencia por Código QR  |
+| Actores  | Conductor (primario), Usuario (secundario)  |
+| Descripción  |  Permite al Conductor o a un dispositivo en el bus escanear el código QR del Usuario para registrar su abordaje y descenso en una parada específica, actualizando el número de pasajeros a bordo. |
+| Precondiciones  | 1. El viaje está activo (vía CU-012).<br>2. El Usuario tiene su código QR activo en la aplicación.  |
+|  Postcondiciones (Éxito) | 1. Se registra la hora, la parada y el tipo de evento (abordaje/descenso) en el historial del Usuario.<br>2. El contador de pasajeros a bordo del bus se actualiza.  |
+| Flujo Principal  | 1. El Usuario presenta su código QR.<br>2. El Conductor (o el escáner) inicia la lectura.<br>3. El sistema valida el código QR y el estado del Usuario (activo/suspendido).<br>4. El sistema registra el evento (abordaje) con la hora y la parada actual.<br>5. El sistema incrementa el contador de pasajeros a bordo.<br>6. Se repiten los pasos 1-5 para el descenso (con decremento del contador).<br>7. Fin del caso de uso.  |
+| Flujos Alternativos  | 3a. Código QR Inválido/Vencido: El sistema muestra un mensaje de error ("Código Inválido"). El Conductor debe solicitar al Usuario que actualice su código.<br>3b. Usuario Suspendido: El sistema muestra una alerta al Conductor ("Usuario Suspendido - No Permitir Abordaje"). El registro de asistencia NO se realiza.  |
+| Flujos de Excepción  | 4a. Falla en la Conexión de Datos: Si no hay conexión, el registro se guarda localmente en el dispositivo del Conductor y se sincroniza automáticamente tan pronto se restablece la conexión.  |
+| Reglas de Negocio  | RN-ASIS-001: Un Usuario no puede abordar si su estado es "Suspendido".<br>RN-ASIS-002: El registro debe incluir el ID del Usuario, la parada (ID) y la marca de tiempo (timestamp).  |
+|  Requisitos Relacionados |  RF-012 (Registro de Asistencia), RNF-004 (Integridad transaccional), RNF-SINC-001 (Sincronización de datos offline). |
