@@ -154,6 +154,7 @@ Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una e
 <br>
 
 # 4.1 Casos De Uso 
+
 1. CU-011: Gestionar Rutas y Paradas
 
    
@@ -218,3 +219,19 @@ Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una e
 | Flujos de Excepción  | 4a. Falla en la Conexión de Datos: Si no hay conexión, el registro se guarda localmente en el dispositivo del Conductor y se sincroniza automáticamente tan pronto se restablece la conexión.  |
 | Reglas de Negocio  | RN-ASIS-001: Un Usuario no puede abordar si su estado es "Suspendido".<br>RN-ASIS-002: El registro debe incluir el ID del Usuario, la parada (ID) y la marca de tiempo (timestamp).  |
 |  Requisitos Relacionados |  RF-012 (Registro de Asistencia), RNF-004 (Integridad transaccional), RNF-SINC-001 (Sincronización de datos offline). |
+
+5. CU-015: Generar Notificación de Retraso/Cancelación
+   
+| Campo  | Descripción  |
+|---|---|
+| ID  |  CU-015 |
+|  Nombre | Generar Notificación de Retraso/Cancelación  |
+| Actores  | Administrador del Sistema (primario), Conductor (puede iniciar la acción), Usuario (receptor)  |
+| Descripción  |  Permite al Administrador (o al Conductor, con aprobación) iniciar un proceso para alertar a todos los Usuarios afectados de una Ruta específica sobre un retraso significativo o la cancelación total de un viaje programado. |
+| Precondiciones  |  1. El Administrador ha iniciado sesión o el Conductor ha enviado una solicitud de reporte de novedad crítica.<br>2. El viaje existe y está en estado "Programado" o "En Trayecto". |
+| Postcondiciones (Éxito)  |  1. Se registra la notificación en el sistema con un timestamp.<br>2. Los Usuarios afectados reciben una notificación instantánea (Push Notification) en sus dispositivos.<br>3. El estado del viaje se actualiza (ej., de "Programado" a "Retrasado"). |
+|  Flujo Principal | 1. El Administrador selecciona la opción "Notificar Ruta" (o revisa el reporte de novedad crítica del Conductor).<br>2. El sistema solicita la Ruta y el Tipo de Alerta (Retraso / Cancelación).<br>3. Si es Retraso, se ingresa la nueva ETA (Hora Estimada de Llegada) o tiempo de espera.<br>4. El Administrador confirma la acción.<br>5. El sistema identifica a todos los Usuarios asociados a esa Ruta en ese horario.<br>6. El sistema genera el mensaje de alerta y lo envía a través del servicio de notificaciones.<br>7. El sistema actualiza el estado del viaje y registra la notificación en el log de auditoría.<br>8. Fin del caso de uso.  |
+| Flujos Alternativos  |  3a. Alerta de Cancelación: Si se selecciona "Cancelación", se omite la solicitud de ETA (paso 3). El sistema actualiza el estado del viaje a "Cancelado" (paso 7).<br>5a. Usuarios sin App/Notificaciones: Si el sistema identifica Usuarios sin la aplicación instalada o con notificaciones deshabilitadas, genera un correo electrónico alternativo para esos usuarios. |
+| Flujos de Excepción  |  6a. Falla en el Servicio de Notificaciones: Si el servicio externo (ej. Firebase Cloud Messaging) no responde, el sistema registra el error, realiza un reintento y notifica al Administrador que la notificación podría no haber llegado a todos los usuarios. |
+| Reglas de Negocio  | RN-NOT-001: La notificación de retraso solo se debe permitir si el tiempo de espera excede los 15 minutos (configurable).<br>RN-NOT-002: El envío de notificaciones de cancelación detiene inmediatamente la recepción de coordenadas GPS del bus (si estaba activo).  |
+| Requisitos Relacionados  |  RF-015 (Notificaciones de Retraso/Cancelación), RNF-DISP-002 (Tasa de entrega de notificaciones > 99%), RNF-006 (Auditoría de seguridad). |
