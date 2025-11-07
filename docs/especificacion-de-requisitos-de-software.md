@@ -1,87 +1,87 @@
-. Perspectiva del producto
+  # 2.1Perspectiva del producto 
 
 MoviUs es una plataforma digital que busca modernizar la gestión del transporte en la Universidad Metropolitana del Norte (UMN). Reemplaza los procesos manuales con una herramienta centralizada donde los usuarios pueden consultar rutas, horarios y disponibilidad de buses, mientras el personal administra la operación en tiempo real.
 
 El sistema se integrará con el inicio de sesión institucional para mayor seguridad y ofrecerá una interfaz simple, adaptable y accesible para todos. En pocas palabras, MoviUs hará que el transporte universitario sea más ágil, ordenado y confiable.
 
-. Funciones del producto
+# Funciones del producto
 
-El sistema MoviUs cubrirá las siguientes funciones principales:
+* El sistema MoviUs cubrirá las siguientes funciones principales:
 
-Consulta de rutas y horarios: Los usuarios podrán visualizar recorridos, horarios actualizados y ubicación de buses en tiempo real.
+* Consulta de rutas y horarios: Los usuarios podrán visualizar recorridos, horarios actualizados y ubicación de buses en tiempo real.
 
-Reserva de cupo: Los estudiantes podrán reservar un lugar en rutas de alta demanda.
+* Reserva de cupo: Los estudiantes podrán reservar un lugar en rutas de alta demanda.
 
-Notificaciones automáticas: Se enviarán alertas por retrasos, cancelaciones o emergencias.
+* Notificaciones automáticas: Se enviarán alertas por retrasos, cancelaciones o emergencias.
 
-Gestión operativa: El personal de transporte podrá asignar rutas, monitorear buses activos y registrar novedades.
+* Gestión operativa: El personal de transporte podrá asignar rutas, monitorear buses activos y registrar novedades.
 
-Panel administrativo: Se mostrarán indicadores de ocupación, puntualidad y eficiencia.
+* Panel administrativo: Se mostrarán indicadores de ocupación, puntualidad y eficiencia.
 
-Trazabilidad: Se registrará la identificación de pasajeros al abordar los buses.
+* Trazabilidad: Se registrará la identificación de pasajeros al abordar los buses.
 
-Atención a emergencias: Se incluirá un botón de pánico con notificación inmediata al área de seguridad.
+* Atención a emergencias: Se incluirá un botón de pánico con notificación inmediata al área de seguridad.
 
-Estas funciones buscan resolver los principales problemas actuales: falta de comunicación, planificación ineficiente y ausencia de información en tiempo real.
+* Estas funciones buscan resolver los principales problemas actuales: falta de comunicación, planificación ineficiente y ausencia de información en tiempo real.
 
-. Restricciones
+#  Restricciones
 Técnicas
 
-El sistema debe permitir a los usuarios iniciar sesión con su cuenta institucional, evitando la creación de nuevos usuarios o contraseñas.
+* El sistema debe permitir a los usuarios iniciar sesión con su cuenta institucional, evitando la creación de nuevos usuarios o contraseñas.
 
-La aplicación móvil deberá funcionar sin conexión a internet por cortos periodos, de manera que las operaciones básicas (como verificar rutas o registrar asistencia) sigan disponibles.
+* La aplicación móvil deberá funcionar sin conexión a internet por cortos periodos, de manera que las operaciones básicas (como verificar rutas o registrar asistencia) sigan disponibles.
 
-Los buses contarán con dispositivos GPS y conexión a internet para actualizar su ubicación en tiempo real dentro del sistema.
+* Los buses contarán con dispositivos GPS y conexión a internet para actualizar su ubicación en tiempo real dentro del sistema.
 
-El sistema permitirá exportar reportes e información en formatos fáciles de usar, como Excel o CSV, para análisis y control administrativo.
+* El sistema permitirá exportar reportes e información en formatos fáciles de usar, como Excel o CSV, para análisis y control administrativo.
 
-Se busca que el sistema sea ligero, rápido y compatible con la mayoría de los teléfonos Android en uso por el personal de transporte.
+* Se busca que el sistema sea ligero, rápido y compatible con la mayoría de los teléfonos Android en uso por el personal de transporte.
 
 De negocio
 
-Presupuesto máximo: $78,000,000 COP.
+* Presupuesto máximo: $78,000,000 COP.
 
-Entrega del MVP: 4 meses antes del inicio del siguiente semestre.
+* Entrega del MVP: 4 meses antes del inicio del siguiente semestre.
 
-Capacitación breve para conductores y auxiliares.
+* Capacitación breve para conductores y auxiliares.
 
-Disponibilidad del sistema: 99% durante el horario operativo (6:00 a.m. – 10:00 p.m.).
+* Disponibilidad del sistema: 99% durante el horario operativo (6:00 a.m. – 10:00 p.m.).
 
-Legales y normativas
+* Legales y normativas
 
-Cumplimiento de la Ley 1581 de 2012 (protección de datos personales).
+* Cumplimiento de la Ley 1581 de 2012 (protección de datos personales).
 
-Confidencialidad de ubicación y datos de usuarios.
+* Confidencialidad de ubicación y datos de usuarios.
 
-Cumplimiento de la Ley 769 de 2002 y el Decreto 1079 de 2015 sobre transporte de personas.
+* Cumplimiento de la Ley 769 de 2002 y el Decreto 1079 de 2015 sobre transporte de personas.
 
-. Suposiciones y dependencias
+# Suposiciones y dependencias
 
-Todos los buses contarán con GPS y conexión móvil antes del despliegue.
+* Todos los buses contarán con GPS y conexión móvil antes del despliegue.
 
-Dependencia del servidor institucional AWS y la red universitaria.
+* Dependencia del servidor institucional AWS y la red universitaria.
 
-Conductores capacitados para usar la aplicación móvil.
+* Conductores capacitados para usar la aplicación móvil.
 
-Comunicación con usuarios mediante correo institucional y notificaciones push.
+* Comunicación con usuarios mediante correo institucional y notificaciones push.
 
-El éxito del sistema depende de la actualización constante de datos por parte del área administrativa.
+* El éxito del sistema depende de la actualización constante de datos por parte del área administrativa.
 
-. Requisitos futuros
+# Requisitos futuros
 
-A futuro, MoviUs podría incorporar nuevas funciones como:
+* A futuro, MoviUs podría incorporar nuevas funciones como:
 
-Optimización de rutas mediante inteligencia artificial.
+* Optimización de rutas mediante inteligencia artificial.
 
-Integración con apps de movilidad urbana (Moovit, Google Maps).
+* Integración con apps de movilidad urbana (Moovit, Google Maps).
 
-Pagos digitales o descuentos automáticos en matrícula según uso.
+* Pagos digitales o descuentos automáticos en matrícula según uso.
 
-Sistema de recompensas para fomentar el uso responsable.
+* Sistema de recompensas para fomentar el uso responsable.
 
-Chatbot inteligente para atención rápida y soporte.
+* Chatbot inteligente para atención rápida y soporte.
 
-Aplicación nativa para iOS y Android con mejor rendimiento.
+* Aplicación nativa para iOS y Android con mejor rendimiento.
 
 Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una experiencia más completa a toda la comunidad universitaria.
 
