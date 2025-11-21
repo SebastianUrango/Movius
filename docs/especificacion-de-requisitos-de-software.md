@@ -120,6 +120,72 @@ Estas mejoras fortalecerán el sistema, ampliarán su alcance y ofrecerán una e
 | **Dependencias** | RF-002 (Ubicación de buses en tiempo real), RF-005 (Gestión de programación de rutas) |
 | **Comentarios** | Este requisito es esencial para la operación diaria, ya que permite consultar la programación de buses y verificar su disponibilidad de manera eficiente. |
 
+| **ID** | RF-002 |
+|--------|---------|
+| **Nombre** | Ubicación de buses en tiempo real |
+| **Descripción** | El sistema mostrará la ubicación de los buses en un mapa, utilizando los datos GPS enviados desde los vehículos. <br><br>**Entrada:** Datos GPS del bus. <br>**Procesamiento:** Actualización del mapa con la posición del bus. <br>**Salida:** Mapa con posición del bus actualizada. |
+| **Prioridad** | Esencial |
+| **Estabilidad** | Media |
+| **Fuente** | Área de Transporte UMN |
+| **Criterios de Aceptación** | 1. El mapa se actualiza cada 10–15 segundos. <br>2. Se muestra si el bus está en movimiento o detenido. <br>3. La ruta del bus es visible para el usuario. |
+| **Dependencias** | GPS de buses, red móvil |
+| **Comentarios** | Mejora la precisión de la información para los usuarios. |
+
+| **ID** | RF-003 |
+|--------|---------|
+| **Nombre** | Notificaciones automáticas |
+| **Descripción** | El sistema enviará notificaciones sobre retrasos, cancelaciones o emergencias asociadas a las rutas. <br><br>**Entrada:** Evento generado (retraso, cancelación, emergencia). <br>**Procesamiento:** Envío de alerta según la ruta del usuario. <br>**Salida:** Notificación push en el dispositivo. |
+| **Prioridad** | Alta |
+| **Estabilidad** | Media |
+| **Fuente** | Coordinación de Transporte |
+| **Criterios de Aceptación** | 1. Las alertas se envían en menos de 30 segundos. <br>2. El usuario recibe notificaciones incluso con la app cerrada. <br>3. Las notificaciones dependen de las rutas seguidas o reservadas. |
+| **Dependencias** | Sistema de notificaciones, RF-003 |
+| **Comentarios** | Mejora la comunicación y reduce confusiones. |
+
+| **ID** | RF-004 |
+|--------|---------|
+| **Nombre** | Botón de emergencia |
+| **Descripción** | El sistema incluirá un botón de pánico que enviará una alerta con la ubicación del usuario al área de seguridad. <br><br>**Entrada:** Presión del botón. <br>**Procesamiento:** Envío de alerta inmediata. <br>**Salida:** Confirmación visual de “alerta enviada”. |
+| **Prioridad** | Esencial |
+| **Estabilidad** | Alta |
+| **Fuente** | Departamento de Seguridad UMN |
+| **Criterios de Aceptación** | 1. La alerta se envía en menos de 5 segundos. <br>2. Incluye ubicación aproximada. <br>3. Seguridad recibe la notificación de inmediato. |
+| **Dependencias** | GPS, RF-002 |
+| **Comentarios** | Requisito crítico para la seguridad de los usuarios. |
+
+| **ID** | RF-005 |
+|--------|---------|
+| **Nombre** | Calificación del servicio |
+| **Descripción** | El sistema permitirá a los usuarios evaluar la calidad del servicio de transporte asignando una calificación de 1 a 5 estrellas y un comentario opcional. <br><br>**Entrada:** Selección del viaje y elección de estrellas/comentario. <br>**Procesamiento:** Registro de la calificación en la base de datos y actualización del promedio general. <br>**Salida:** Mensaje de confirmación “Calificación enviada”. |
+| **Prioridad** | Media |
+| **Estabilidad** | Media |
+| **Fuente** | Usuarios del servicio / Dirección de Bienestar |
+| **Criterios de Aceptación** | 1. El usuario puede calificar solo los viajes realizados. <br>2. La calificación permite de 1 a 5 estrellas. <br>3. Los comentarios son opcionales. <br>4. El sistema actualiza el promedio del servicio correctamente. |
+| **Dependencias** | RF-004 (Historial de viajes), Base de datos |
+| **Comentarios** | Permite recopilar retroalimentación para mejorar continuamente el servicio. |
+
+| **ID** | RF-006 |
+|--------|---------|
+| **Nombre** | Ubicación de buses en tiempo real |
+| **Descripción** | El sistema mostrará la ubicación de los buses en un mapa, utilizando los datos GPS enviados desde los vehículos. <br><br>**Entrada:** Datos GPS del bus. <br>**Procesamiento:** Actualización del mapa con la posición del bus. <br>**Salida:** Mapa con posición del bus actualizada. |
+| **Prioridad** | Esencial |
+| **Estabilidad** | Media |
+| **Fuente** | Área de Transporte UMN |
+| **Criterios de Aceptación** | 1. El mapa se actualiza cada 10–15 segundos. <br>2. Se muestra si el bus está en movimiento o detenido. <br>3. La ruta del bus es visible para el usuario. |
+| **Dependencias** | GPS de buses, red móvil |
+| **Comentarios** | Mejora la precisión de la información para los usuarios. |
+
+| **ID** | RF-007 |
+|--------|---------|
+| **Nombre** | Visualización de perfil |
+| **Descripción** | El sistema permitirá al usuario ver su información básica registrada, como nombre, correo y foto. <br><br>**Entrada:** Clic en la opción “Perfil”. <br>**Procesamiento:** Consulta de datos del usuario. <br>**Salida:** Pantalla con su información personal. |
+| **Prioridad** | Baja |
+| **Estabilidad** | Alta |
+| **Fuente** | Usuarios finales |
+| **Criterios de Aceptación** | 1. El usuario puede ver su nombre y correo. <br>2. La pantalla carga en menos de 3 segundos. |
+| **Dependencias** | RF-010 |
+| **Comentarios** | Requisito simple para mostrar información del usuario. |
+
 
 | Campo | Descripción |
 |-------|-------------|
